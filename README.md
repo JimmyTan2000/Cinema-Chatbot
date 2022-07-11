@@ -1,4 +1,4 @@
-#Table of Contents
+# Table of Contents
 * Project Title
 * Introduction
 * Version
@@ -7,21 +7,21 @@
 * Usage
 
 
-##Project Title
+## Project Title
 Assistant system for cinema website/app
 
 
-##Introduction
+## Introduction
 An assistant system which assists user to fetch information from cinema website/app such as movie description, availability of a movie, schedule, sitting plan, etc.
 
 
-##Version
+## Version
 Python version - 3.7 or 3.8
 Rasa version - 2.8.12
 Flask version - 2.0.2
 
 
-##Installation
+## Installation
 For Windows:
 Required Python 3.7 or 3.8
 
@@ -61,7 +61,7 @@ Command line shown below.
 --- pip install requests ---
 
 
-##Training
+## Training
 After activated the virtual environment with the required library installed, direct to where the assistant system files are located.
 Type rasa train to start the chatbot model training.
 Example is shown below.
@@ -69,7 +69,7 @@ Example is shown below.
 Trained models will be stored in the folder named "models".
 
 
-##Usage
+## Usage
 1. Start a flask server
 After a model is trained, user is required to start a flask server before running the chatbot.
 To start a flask server, activate the virtual environment in CMD and direct to where the assistant system files are located.
