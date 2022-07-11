@@ -1,0 +1,311 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - Hi 
+    - Hey 
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - heya
+    - hihi
+    - sup
+    - wassup
+    - wazzup
+    - heyyo
+    - yo
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - cucu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - ciao
+    - cya
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - yeah
+    - right
+    - that's right
+    - perfect
+    - sounds great
+    - sounds good
+    - indeed
+    - of course
+    - that sounds great
+    - that sounds good
+    - correct
+    - true
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - nope
+    - not true
+    - false
+    - nah
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - that's all
+    - that is all
+    - that's it
+    - nothing
+    - that is it
+    - fuck off
+    - fk off
+    - fuck you
+    - fu
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - I'm sed
+    - sed
+
+- intent: thanks_bot
+  examples: |
+    - thanks
+    - thank you
+    - thanks a lot
+    - thank you very much
+    - thank you so much
+    - thanks a million
+    - thanks in advance
+    - it meant a lot to me
+    - i can't thank you enough
+    - that's very kind of you
+    - i really appreciate it
+    - i'm really grateful
+    - you made my day
+    - this made my day
+    - tq
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a robot?
+    - are you a human?
+    - are you even a real person?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - am I talking to an actual person?
+
+# - intent: nlu_fallback
+#   examples: |
+#     - what movies are available yesterday?
+#     - yesterday had what movies?
+#     - price for a senior ticket?
+#     - what is the ticket price for a senior?
+
+- intent: ask_what_movie
+  examples: |
+    - what movies are available [today](date)?
+    - what is available on [the day after tomorrow](date)?
+    - what movies are available on [the day after tomorrow](date)?
+    - what movies are available [tomorrow](date)?
+    - what movies are available on [29/11](date)?
+    - what movies are available on [the day after tomorrow](date)?
+    - what movies are playing at the cinema?
+    - what movies are playing [today](date)?
+    - what movies are playing [tomorrow](date)?
+
+- intent: ask_specific_movie_time
+  examples: |
+    - is [Jumanji](movie_name) available today?
+    - is [fast and furious](movie_name) available today?
+    - is [The Hunger Game](movie_name) available today?
+    - is [No Time To Die](movie_name) available tomorrow?
+    - is [Red Notice](movie_name) available on [25/11](date)?
+    - is [Eternals](movie_name) playing today?
+    - is [Venom](movie_name) playing at the cinema?
+    - is [Venom](movie_name) playing today at the cinema?
+    - is [Jumanji](movie_name) playing tomorrow at the cinema?    
+
+- intent: know_more_about_specific_movie
+  examples: |
+    - I would like to know more about [Jumanji](movie_name)
+    - I would like to know about the movie [Avengers](movie_name)
+    - tell me about [Batman](movie_name)
+    - tell me more about [A Quiet Place](movie_name)
+    - what is [Spirited Away](movie_name) about?
+
+- intent: ask_ticket_price
+  examples: |
+    - how much is an ticket for [an](ticket_number) [adult](ticket_type)?
+    - how much is an ticket for [a](ticket_number) [child](ticket_type)?
+    - how much is [1](ticket_number) [adult](ticket_type) ticket?
+    - how much is [7](ticket_number) [adult](ticket_type) tickets?
+    - how much are [2](ticket_number) [adult](ticket_type) tickets?
+    - how much is [1](ticket_number) [child](ticket_type) ticket?
+    - how much is [4](ticket_number) [children](ticket_type) tickets?
+    - how much are [3](ticket_number) [children](ticket_type) tickets?
+    - how much is [a](ticket_number) ticket?
+    - how much does [a](ticket_number) ticket cost?
+    - what is the price of [an](ticket_number) entrance ticket?
+    - what is the price of [3](ticket_number) tickets?
+    - how much is the cost of [a](ticket_number) ticket?
+    - how much is the cost of [3](ticket_number) tickets?
+    - do you know how much [a](ticket_number) ticket costs?
+    - do you know how much [2](ticket_number) tickets cost?
+    - would you please tell me the price of [a](ticket_number) ticket?
+    - would you please tell me the price of [an](ticket_number) entrance ticket?
+    - would you please tell me the price of [3](ticket_number) tickets?
+
+- intent: show_movie_schedule
+  examples: |
+    - please show me the movie schedule of [Jumanji](movie_name)
+    - please show me the movie schedule of [Jimmy Tan](movie_name)
+    - please show me the movie schedule of [Tan Jimmy](movie_name)
+    - please show me the movie schedule of [ABC](movie_name)
+    - please show me the schedule of [Spiderman](movie_name)
+    - please show me the schedule of [fifty shades of grey](movie_name)
+    - please show me the schedule of [Fifty Shades of Grey](movie_name)
+    - schedule for [Fifty Shades of Grey](movie_name) please
+    - schedule for [fifty shades of grey](movie_name) please
+    - schedule for [Spiderman](movie_name) please
+    - schedule for [No Time To Die](movie_name) please
+    - schedule for [Despicable Me](movie_name) please
+    - schedule for [Fast and Furious](movie_name)
+    - schedule for [Slow and Furious](movie_name)
+    - schedule for [the movies with damn fucking long name](movie_name)
+    - schedule for [i really dont know what else to put in to train this stupid bot](movie_name)
+    - timetable for [hahahaha here we go again piece of shit](movie_name)
+    - timetable for [A](movie_name)
+    - timetable for [B](movie_name)
+    - timetable for [C](movie_name)
+    - timetable for [D](movie_name)
+    - timetable for [moves with damn long name i dont even know](movie_name)
+    - what is the schedule of [E](movie_name)
+    - what is the schedule of [F](movie_name)
+    - what is the schedule of [G](movie_name)
+    - i'd like to know about the schedule of [AA](movie_name)
+    - i'd like to know about the schedule of [BA](movie_name)
+    - i'd like to know about the schedule of [CA](movie_name)
+    
+# - intent: choose_seat
+#   examples: |
+#     - [G-07](seat number)
+#     - [G-08](seat number) and [G-09](seat number)
+#     - I would like to have [G-05](seat number) and [G-04](seat number)
+
+- intent: ask_seat_availability_with_date
+  examples: |
+    - which seat is available for [Jumanji](movie_name) on [today](date)?
+    - which seat is available for [Batman](movie_name) on [today](date)?
+    - which seat is available for [Spiderman](movie_name) on [today](date)?
+    - which seat is available for [Spiderman](movie_name) on [tomorrow](date)?
+    - which seat is available for [spiderman](movie_name) on [tomorrow](date)?
+    - which seat is available for [batman](movie_name) on [the day after tomorrow](date)?
+    - which seat is available for [Batman](movie_name) on [the day after tomorrow](date)?
+    - which seat is available for [You are so handsome](movie_name) on [today](date)?
+    - which seat is available for [Merry Christmas](movie_name) on [today](date)?
+    - what seat is available for [Batman](movie_name) on [29/11](date)?
+    - what seat is available for [bat](movie_name) on [29/12](date)?
+    - what seat is available for [man](movie_name) on [today](date)?
+    - any seat for [Spiderman](movie_name) on [tomorrow](date)?
+    - any seat for [Spider](movie_name) on [13/1](date)?
+    - any seat for [Girl](movie_name) on [4/3](date)?
+    - what seat is available for [abc](movie_name) on [today](date)?
+    - what seat is available for [Silent Night](movie_name) on [today](date)?
+    - what seat is available for [no time to die](movie_name) on [today](date)?
+    - what seat is available for [No Time To Die](movie_name) on [today](date)?
+    - what seat is available for [def](movie_name) on [today](date)?
+    - what seat is available for [You are so handsome](movie_name) on [today](date)?
+    - what seat is available for [Merry Christmas](movie_name) on [today](date)?
+
+- intent: ask_seat_availability_without_date
+  examples: |
+    - which seat is available for [Jumanji](movie_name)?
+    - which seat is available for [Spiderman](movie_name)?
+    - which seat is available for [Batman](movie_name)?
+    - which seat is available for [You are so handsome](movie_name)?
+    - which seat is available for [Merry Christmas](movie_name)?
+    - what seat is available for [Batman](movie_name)?
+    - what seat is available for [Bat](movie_name)?
+    - what seat is available for [Man](movie_name)?
+    - any seat for [Spiderman](movie_name)?
+    - any seat for [Spider](movie_name)?
+    - any seat for [Girl](movie_name)?
+    - what seat is available for [abc](movie_name)?
+    - what seat is available for [Silent Night](movie_name)?
+    - what seat is available for [no time to die](movie_name)?
+    - what seat is available for [No Time To Die](movie_name)?
+    - what seat is available for [def](movie_name)?
+    - what seat is available for [You are so handsome](movie_name)?
+    - what seat is available for [Merry Christmas](movie_name)?
+
+- intent: out_of_scope
+  examples: |
+    - Play some music
+    - Where to get flowers?
+    - I would like to play some games
+    - I want to order food
+    - Open the light please
+
+- intent: give_date
+  examples: |
+    - on [today](date)
+    - on [tomorrow](date)
+    - on [the day after tomorrow](date)
+    - on [29/11](date)
+    - [today](date)
+    - [tomorrow](date)
+    - [the day after tomorrow](date)
+    - [29/11](date)

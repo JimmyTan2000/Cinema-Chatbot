@@ -1,0 +1,110 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - thanks_bot
+  - bot_challenge
+  # - nlu_fallback
+  - ask_what_movie
+  - ask_specific_movie_time
+  - know_more_about_specific_movie
+  - ask_ticket_price
+  - show_movie_schedule
+  - choose_seat
+  - out_of_scope
+  - ask_seat_availability_with_date
+  - ask_seat_availability_without_date
+  - give_date
+
+entities:
+  - date
+  - movie_name 
+  - ticket_number 
+  - ticket_type
+  # - seat number 
+
+slots:           # Data types may be changed when implementing API calls.
+  date: 
+    type: text
+  movie_name:
+    type: text
+  ticket_number:
+    type: text
+  ticket_type:   # May be changed to boolean values in the future (a child or not a child)
+    type: text
+  # seat number:
+  #   type: text
+
+responses:
+  utter_greet:
+  - text: "Hello, Sophia here. I'm here to assist you. How can I help?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_atyourservice:
+  - text: "Anytime, at your service!"
+
+  # utter_please_rephrase:
+  # - text: "I'm sorry, I didn't quite understand that. Could you please rephrase it?"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_moviesavailable:
+  - text: "is/are available on {date}." #to be changed in the future with real data.
+
+  utter_specificmoviesavailable:
+  - text: "Yes, the movie is available!"  #to be changed in the future with real data.
+
+  utter_knowmoreaboutspecificmovie:
+  - text: "Okay, here's the link for the information I found about {movie_name}: " #to be changed in the future with real data.
+
+  utter_anythingelse:
+  - text: "Anything else I can help you with?"
+
+  utter_askticketprice:
+  - text: "The price for an adult is 10 Euro, and for a child is 7 Euro"
+
+  utter_showschedule:
+  - text: "Okay, here is the link of the schedule for {movie_name}:"
+  
+  # utter_chooseseat:
+  # - text: "Okay, I will try to choose this seat for you, please wait for a moment...(to be implemented in the future)" #to be changed in the future with real data.
+
+  utter_out_of_scope:
+  - text: "Sorry, I can't handle that request"
+
+  utter_howcanihelp:
+  - text: "How can I help you with?"
+
+  utter_seatavailable:
+  - text: "Okay, here is the link of the sitting plan for {movie_name} on {date}:"
+
+  utter_askdate:
+  - text: "May I ask for the date?"
+
+actions:
+- action_movie_description
+- action_movies_available
+- action_movies_schedule
+- action_sitting_plans
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

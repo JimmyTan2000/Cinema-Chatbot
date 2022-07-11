@@ -1,0 +1,141 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+# - story: asking about movies in general 
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_what_movie
+#     entities:
+#     - date: "today"
+#   - slot_was_set:
+#     - date: "today"
+#   - action: utter_moviesavailable
+#   - intent: know_more_about_specific_movie
+#     entities:
+#     - movie_name: "Jumanji"
+#   - slot_was_set:
+#     - movie_name: "Jumanji"
+#   - action: utter_knowmoreaboutspecificmovie
+#   - intent: ask_ticket_price
+#     entities:
+#     - ticket_number: "2"
+#     - ticket_type: "adult"
+#   - slot_was_set:
+#     - ticket_number: "2"
+#     - ticket_type: "adult"
+#   - action: utter_askticketprice
+#   - intent: show_movie_schedule
+#   - action: utter_showschedule
+#   - intent: choose_seat
+#   - action: utter_chooseseat
+
+- story: asking about a movie description
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: know_more_about_specific_movie
+    entities:
+    - movie_name: "A Quiet Place"
+  - slot_was_set:
+    - movie_name: "A Quiet Place"
+  - action: utter_knowmoreaboutspecificmovie
+  - action: action_movie_description
+  - action: utter_anythingelse
+
+- story: asking about a movie schedule
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: show_movie_schedule
+    entities:
+    - movie_name: "A Quiet Place"
+  - slot_was_set:
+    - movie_name: "A Quiet Place"
+  - action: utter_showschedule
+  - action: action_movies_schedule
+  - action: utter_anythingelse
+  
+- story: asking about movie ticket price
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_ticket_price
+  - action: utter_askticketprice
+  - action: utter_anythingelse
+
+- story: asking about movies available
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_what_movie
+    entities:
+    - date: "today"
+  - slot_was_set:
+    - date: "today"
+  - action: action_movies_available
+  #- action: utter_moviesavailable
+  - action: utter_anythingelse
+
+- story: asking about seat availability with date given
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_seat_availability_with_date
+    entities:
+    - movie_name: "spiderman"
+    - date: "today"
+  - slot_was_set:
+    - movie_name: "spiderman"
+    - date: "today"
+  #- action: utter_seatavailable
+  - action: action_sitting_plans
+  - action: utter_anythingelse
+
+- story: asking about seat availability without date given
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_seat_availability_without_date
+    entities:
+    - movie_name: "jumanji"
+  - slot_was_set:
+    - movie_name: "jumanji"
+  - action: utter_askdate
+  - intent: give_date
+    entities:
+    - date: "tomorrow"
+  - slot_was_set:
+    - date: "tomorrow"
+  #- action: utter_seatavailable
+  - action: action_sitting_plans
+  - action: utter_anythingelse
